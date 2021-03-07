@@ -32,10 +32,10 @@ class App extends Component {
 
     discountChanged(coupon) {
         let cart = {...this.state.cart};
-        if(cart.subTotal <= coupon) return;
-        cart.totalPrice = cart.subTotal + cart.discount;
-        cart.discount = parseInt(coupon);
+        //cart.totalPrice = cart.subTotal + cart.discount;
         cart.selectedCoupon = coupon;
+        //cart.discount = parseInt(coupon);
+        cart.discount = (coupon / 100) * cart.subTotal;
         cart.totalPrice = cart.subTotal - cart.discount;
         this.setState({ cart });
     }
@@ -51,7 +51,8 @@ class App extends Component {
             quantity: 1
         });
         cart.subTotal += products[index].price;
-        cart.totalPrice += products[index].price;
+        cart.discount = (cart.selectedCoupon / 100) * cart.subTotal;
+        cart.totalPrice = cart.subTotal - cart.discount;
         this.setState({
             products,
             cart
@@ -65,9 +66,10 @@ class App extends Component {
         let cartIndex = this.state.cart.items.findIndex(item => item.id === products[index].id);
         cart.items.splice(cartIndex, 1);
         cart.subTotal -= products[index].price;
-        cart.totalPrice -= products[index].price;
-        if(cart.subTotal <= cart.discount) {
-            cart.totalPrice += cart.discount;
+        cart.discount = (cart.selectedCoupon / 100) * cart.subTotal;
+        cart.totalPrice = cart.subTotal - cart.discount;
+        if(cart.subTotal === 0) {
+            cart.totalPrice = 0;
             cart.discount = 0;
             cart.selectedCoupon = '0';
         }

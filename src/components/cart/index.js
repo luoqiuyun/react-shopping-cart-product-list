@@ -23,7 +23,7 @@ export default class Cart extends Component {
                     <select data-testid="cart-coupon"
                             className="coupon-select"
                             value={this.props.cart.selectedCoupon}
-                            disabled={this.props.cart.discount >= this.props.cart.subTotal}
+                            disabled={this.props.cart.subTotal === 0}
                             onChange={this.discountChanged}>
                         <option value="0">None</option>
                         <option value="10">OFF10</option>
