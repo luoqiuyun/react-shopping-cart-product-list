@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="5" failures="4" time="21.776">
-  <testsuite name="undefined" errors="0" failures="4" skipped="0" timestamp="2021-03-07T19:24:34" time="10.363" tests="5">
-    <testcase classname=" Should Add item to cart" name=" Should Add item to cart" time="0.079">
+<testsuites name="jest tests" tests="5" failures="1" time="5.625">
+  <testsuite name="undefined" errors="0" failures="1" skipped="0" timestamp="2021-03-07T19:45:55" time="4.585" tests="5">
+    <testcase classname=" Should Add item to cart" name=" Should Add item to cart" time="0.065">
       <failure>Error: expect(received).toBeFalsy()
 
 Received: &lt;button class=&quot;x-small danger&quot; data-testid=&quot;btn-item-remove&quot;&gt;Remove&lt;/button&gt;
@@ -13,43 +13,13 @@ Received: &lt;button class=&quot;x-small danger&quot; data-testid=&quot;btn-item
     at C:\Users\qiuyu\Bitbucket\MGM-TEST-2021-03-07\node_modules\jest-jasmine2\build\queueRunner.js:73:41
     at processTicksAndRejections (internal/process/task_queues.js:93:5)</failure>
     </testcase>
-    <testcase classname=" Should Calculate correct price before selecting coupon" name=" Should Calculate correct price before selecting coupon" time="0.07">
+    <testcase classname=" Should Calculate correct price before selecting coupon" name=" Should Calculate correct price before selecting coupon" time="0.056">
     </testcase>
-    <testcase classname=" Should calculate discounts on selecting a coupon" name=" Should calculate discounts on selecting a coupon" time="0.056">
-      <failure>Error: expect(received).toEqual(expected) // deep equality
-
-Expected: 5
-Received: 10
-    at Object.&lt;anonymous&gt; (C:\Users\qiuyu\Bitbucket\MGM-TEST-2021-03-07\src\App.test.js:140:34)
-    at Object.asyncJestTest (C:\Users\qiuyu\Bitbucket\MGM-TEST-2021-03-07\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:102:37)
-    at C:\Users\qiuyu\Bitbucket\MGM-TEST-2021-03-07\node_modules\jest-jasmine2\build\queueRunner.js:43:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (C:\Users\qiuyu\Bitbucket\MGM-TEST-2021-03-07\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
-    at C:\Users\qiuyu\Bitbucket\MGM-TEST-2021-03-07\node_modules\jest-jasmine2\build\queueRunner.js:73:41</failure>
+    <testcase classname=" Should calculate discounts on selecting a coupon" name=" Should calculate discounts on selecting a coupon" time="0.031">
     </testcase>
-    <testcase classname=" Should recalculate prices when item is removed from cart" name=" Should recalculate prices when item is removed from cart" time="0.033">
-      <failure>Error: expect(received).toEqual(expected) // deep equality
-
-Expected: 6
-Received: 20
-    at Object.&lt;anonymous&gt; (C:\Users\qiuyu\Bitbucket\MGM-TEST-2021-03-07\src\App.test.js:155:34)
-    at Object.asyncJestTest (C:\Users\qiuyu\Bitbucket\MGM-TEST-2021-03-07\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:102:37)
-    at C:\Users\qiuyu\Bitbucket\MGM-TEST-2021-03-07\node_modules\jest-jasmine2\build\queueRunner.js:43:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (C:\Users\qiuyu\Bitbucket\MGM-TEST-2021-03-07\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
-    at C:\Users\qiuyu\Bitbucket\MGM-TEST-2021-03-07\node_modules\jest-jasmine2\build\queueRunner.js:73:41</failure>
+    <testcase classname=" Should recalculate prices when item is removed from cart" name=" Should recalculate prices when item is removed from cart" time="0.064">
     </testcase>
-    <testcase classname=" Should recalculate prices when coupon is changed" name=" Should recalculate prices when coupon is changed" time="0.031">
-      <failure>Error: expect(received).toEqual(expected) // deep equality
-
-Expected: 6
-Received: 20
-    at Object.&lt;anonymous&gt; (C:\Users\qiuyu\Bitbucket\MGM-TEST-2021-03-07\src\App.test.js:182:34)
-    at Object.asyncJestTest (C:\Users\qiuyu\Bitbucket\MGM-TEST-2021-03-07\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:102:37)
-    at C:\Users\qiuyu\Bitbucket\MGM-TEST-2021-03-07\node_modules\jest-jasmine2\build\queueRunner.js:43:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (C:\Users\qiuyu\Bitbucket\MGM-TEST-2021-03-07\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
-    at C:\Users\qiuyu\Bitbucket\MGM-TEST-2021-03-07\node_modules\jest-jasmine2\build\queueRunner.js:73:41</failure>
+    <testcase classname=" Should recalculate prices when coupon is changed" name=" Should recalculate prices when coupon is changed" time="0.057">
     </testcase>
   </testsuite>
 </testsuites>

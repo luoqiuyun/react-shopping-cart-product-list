@@ -32,10 +32,8 @@ class App extends Component {
 
     discountChanged(coupon) {
         let cart = {...this.state.cart};
-        //cart.totalPrice = cart.subTotal + cart.discount;
         cart.selectedCoupon = coupon;
-        //cart.discount = parseInt(coupon);
-        cart.discount = (coupon / 100) * cart.subTotal;
+        cart.discount = (cart.selectedCoupon / 100) * cart.subTotal;
         cart.totalPrice = cart.subTotal - cart.discount;
         this.setState({ cart });
     }
