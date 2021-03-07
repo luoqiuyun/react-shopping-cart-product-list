@@ -2,17 +2,6 @@ import React, {Component} from "react";
 import Product from './Product';
 
 export default class ProductList extends Component {
-    constructor() {
-        super();
-
-        this.state = {
-            addedToCart: false
-        }
-    }
-
-    hideButton = () => {
-        this.setState({addedToCart: true});
-    }
 
     render() {
 
@@ -31,4 +20,3 @@ export default class ProductList extends Component {
         );
     }
 }
-
