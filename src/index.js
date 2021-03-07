@@ -9,5 +9,5 @@ ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
 
 applyPolyfills().then(() => {
-    defineCustomElements(window);
+  defineCustomElements(window);
 })
