@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import { products } from './services/products'
 import ProductList from "./components/product-list";
@@ -12,31 +12,27 @@ const title = "HackerShop";
 class App extends Component {
   constructor() {
     super();
-
     this.state = {
+      products,
       cart: {
         items: [],
         subTotal: 0,
         totalPrice: 0,
         discount: 0,
         selectedCoupon: '0'
-      },
-      products
+      }
     }
-    this.addToCart = this.addToCart.bind(this);
-    this.removeFromCart = this.removeFromCart.bind(this);
-    this.discountChanged = this.discountChanged.bind(this);
   }
 
-  discountChanged(coupon) {
+  discountChanged = (coupon) => {
     let cart = {...this.state.cart};
     cart.selectedCoupon = coupon;
     cart.discount = (cart.selectedCoupon / 100) * cart.subTotal;
     cart.totalPrice = cart.subTotal - cart.discount;
     this.setState({ cart });
-  }
+  };
 
-  addToCart(index) {
+  addToCart = (index) => {
     const products = this.state.products;
     products[index].cartQuantity = 1;
     let cart = {...this.state.cart};
@@ -53,9 +49,9 @@ class App extends Component {
       products,
       cart
     })
-  }
+  };
 
-  removeFromCart(index) {
+  removeFromCart = (index) => {
     const products = this.state.products;
     products[index].cartQuantity = 0;
     let cart = {...this.state.cart};
@@ -73,7 +69,7 @@ class App extends Component {
       cart,
       products
     })
-  }
+  };
 
   render() {
     return (
