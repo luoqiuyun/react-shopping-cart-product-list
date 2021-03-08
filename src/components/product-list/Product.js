@@ -4,25 +4,22 @@ import "./index.css";
 export default class Product extends Component {
   constructor() {
     super();
-
+    
     this.state = {
-      addToCartDisplay: {display:'normal'},
-      removeButtonDisplay: {display:'none'}
+      addedToCart: false
     }
   }
 
   addToCart = () => {
     this.setState({
-      addToCartDisplay: {display:'none'},
-      removeButtonDisplay: {display:'inline'},
+      addedToCart: true
     });
     this.props.addToCart(this.props.idx);
   };
 
   removeFromCart = () => {
     this.setState({
-      addToCartDisplay: {display:'inline'},
-      removeButtonDisplay: {display:'none'}
+      addedToCart: false
     });
     this.props.removeFromCart(this.props.idx);
   };
@@ -40,19 +37,20 @@ export default class Product extends Component {
             <p className="ma-0 mt-8 text-center">${this.props.product.price}</p>
           </div>
           <div className="card-actions justify-content-center pa-4">
+          {!this.state.addedToCart && 
             <button 
               className="x-small outlined"
               data-testid="btn-item-add"
-              onClick={this.addToCart}
-              style={this.state.addToCartDisplay}>Add To Cart
+              onClick={this.addToCart}>Add To Cart
             </button>
-
+          }
+          {this.state.addedToCart && 
             <button 
               className="x-small danger"
               data-testid="btn-item-remove"
-              style={this.state.removeButtonDisplay}
               onClick={this.removeFromCart}>Remove
             </button>
+          }
           </div>
         </div>
       </section>
