@@ -40,8 +40,11 @@ export default class Product extends Component {
               style={this.state.addToCartDisplay}>Add To Cart
             </button>
 
-            <button className="x-small danger" data-testid="btn-item-remove" onClick={this.showButton}>
-              Remove
+            <button 
+              className="x-small danger"
+              data-testid="btn-item-remove"
+              disabled={this.state.addToCartDisplay.display !== 'none'}
+              onClick={this.showButton}>Remove
             </button>
           </div>
         </div>
