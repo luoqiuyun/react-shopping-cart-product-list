@@ -6,17 +6,24 @@ export default class Product extends Component {
     super();
 
     this.state = {
-      addToCartDisplay: {display:'normal'}
+      addToCartDisplay: {display:'normal'},
+      removeButtonDisplay: {display:'none'}
     }
   }
 
-  hideButton = () => {
-    this.setState({addToCartDisplay: {display:'none'}});
+  addToCart = () => {
+    this.setState({
+      addToCartDisplay: {display:'none'},
+      removeButtonDisplay: {display:'inline'},
+    });
     this.props.addToCart(this.props.idx);
   };
 
-  showButton = () => {
-    this.setState({addToCartDisplay: {display:'inline'}});
+  removeFromCart = () => {
+    this.setState({
+      addToCartDisplay: {display:'inline'},
+      removeButtonDisplay: {display:'none'}
+    });
     this.props.removeFromCart(this.props.idx);
   };
 
@@ -36,15 +43,15 @@ export default class Product extends Component {
             <button 
               className="x-small outlined"
               data-testid="btn-item-add"
-              onClick={this.hideButton}
+              onClick={this.addToCart}
               style={this.state.addToCartDisplay}>Add To Cart
             </button>
 
             <button 
               className="x-small danger"
               data-testid="btn-item-remove"
-              disabled={this.state.addToCartDisplay.display !== 'none'}
-              onClick={this.showButton}>Remove
+              style={this.state.removeButtonDisplay}
+              onClick={this.removeFromCart}>Remove
             </button>
           </div>
         </div>
